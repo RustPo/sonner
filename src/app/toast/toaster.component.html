@@ -1,0 +1,11 @@
+<div
+  *ngFor="let position of ['top-left', 'top-right', 'bottom-left', 'bottom-right']; trackBy: trackByPosition"
+  class="toast-container"
+  [ngClass]="position"
+>
+  <app-toast
+    *ngFor="let toast of toastsByPosition[position] || []; trackBy: trackById"
+    [toast]="toast"
+    (dismiss)="dismiss(toast.id)"
+  ></app-toast>
+</div>

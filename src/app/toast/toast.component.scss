@@ -1,0 +1,29 @@
+.toast {
+  background: #000;
+  color: #fff;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: sans-serif;
+  gap: 1rem;
+
+  &.success { border-left: 4px solid green; }
+  &.error { border-left: 4px solid red; }
+  &.info { border-left: 4px solid blue; }
+  &.warning { border-left: 4px solid orange; }
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.close {
+  background: #fff;
+  border: none;
+  font-size: 1.2rem;
+}

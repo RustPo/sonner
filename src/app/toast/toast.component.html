@@ -1,0 +1,16 @@
+<div class="toast" [@toastAnimation] [ngClass]="toast.type" *ngIf="isVisible">
+  <div class="icon">{{ toast.icon || '🔔' }}</div>
+  <div class="content">
+    <strong>{{ toast.title }}</strong>
+    <p *ngIf="toast.description">{{ toast.description }}</p>
+  </div>
+  <div class="actions" *ngIf="toast.action || toast.cancel">
+    <button *ngIf="toast.cancel" (click)="toast.cancel.onClick(); onDismiss()">
+      {{ toast.cancel.label }}
+    </button>
+    <button *ngIf="toast.action" (click)="toast.action.onClick(); onDismiss()">
+      {{ toast.action.label }}
+    </button>
+  </div>
+  <button *ngIf="toast.dismissible" class="close" (click)="onDismiss()">×</button>
+</div>
